@@ -3,7 +3,7 @@ class PhonesController < ApplicationController
   before_action :set_phone, only: [ :show, :edit, :update, :destroy]
 
   def index
-    @phones =Phone.all
+    @phones =Phone.paginate(page: params[:page], per_page: 5)
   end
 
   def show

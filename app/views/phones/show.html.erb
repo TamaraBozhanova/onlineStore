@@ -14,7 +14,7 @@
     <%=@phone.price %> грн
   </section>
   <section class="phone-description">
-    <%=image_tag  @phone.image.url(:large), class: 'img-show' if @phone.image? %>
+    <%=image_tag  @phone.image.url(:thumb), class: 'img-show' if @phone.image? %>
     <%=@phone.description %>
   </section>
 </product>
