@@ -18,7 +18,8 @@ class PhonesController < ApplicationController
     if @phone.save
       redirect_to @phone, success: 'Телефон успешно создан'
     else
-      render :new, danger: 'Телефон не создан'
+      flash.now[:danger] = 'Телефон не создан'
+      render :new
     end
   end
 
@@ -29,7 +30,8 @@ class PhonesController < ApplicationController
     if @phone.update_attributes(phone_params)
       redirect_to @phone, success: 'Телефон успешно обновлен'
     else
-      render :edit, danger: 'Телефон не обновлен'
+      flash.now[:danger] = 'Телефон не обновлен'
+      render :edit
     end
   end
 
@@ -45,6 +47,6 @@ class PhonesController < ApplicationController
   end
 
     def phone_params
-      params.require(:phone).permit(:name, :price, :description, :image)
+      params.require(:phone).permit(:name, :price, :description, :image, :category_id)
     end
 end

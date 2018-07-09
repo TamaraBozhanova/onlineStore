@@ -3,6 +3,10 @@
     <h2><%=link_to phone.name, phone_path(phone) %></h2>
     <small>
       <time><%=phone.created_at.to_date.strftime("%d %B, %Y") %></time>
+      <% if phone.category.present? %>
+       |
+      <%=link_to phone.category.name, phone.category %>
+      <%end %>
       |
       <%=link_to 'Изменить', edit_phone_path(phone) %>
       |
