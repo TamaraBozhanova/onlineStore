@@ -45,6 +45,7 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'carrierwave-i18n'
 gem 'will_paginate', '~> 3.1.0'
+gem 'ancestry'
 
 # gem 'carrierwave', '>= 1.0.0.beta', '<2.0'
 
