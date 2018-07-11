@@ -7,11 +7,13 @@
        |
       <%=link_to phone.category.name, phone.category %>
       <%end %>
+      <% if user_signed_in?%>
       |
       <%=link_to 'Изменить', edit_phone_path(phone) %>
       |
       <%=link_to 'Удалить', phone_path(phone),
                 method: :delete, data: {confirm: 'Вы уверены?'} %>
+      <% end %>
     </small>
   </section>
   <section class="phone-price">
