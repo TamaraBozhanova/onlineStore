@@ -10,11 +10,9 @@
 
   <body>
    <div class="container">
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-     <a class="navbar-brand" href="#">Мобилочка на RoR</a>
+    <nav class="navbar  navbar-inverse bg-inverse">
+     <a class="navbar-brand" href="#">Админ Панель</a>
 
-<!--      <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-      <!--<div class="navbar-collapse" id="navbarSupportedContent">-->
        <ul class="navbar-nav mr-auto">
         <li class="nav-item <%= 'active' if current_page?(root_path) || current_page?(phones_path)%>">
           <a class="nav-link" href="<%= root_path %>">Все телефоны</a>
@@ -25,7 +23,6 @@
            </li>
          <% end %>-->
        </ul>
-       <%#=link_to 'Добавить телефон', new_phone_path, class: 'btn btn-outline-primary pull-xs-right'%>
 
         <ul class="navbar-nav pull-xs-right">
           <% if user_signed_in? %>

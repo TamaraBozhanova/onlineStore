@@ -8,20 +8,24 @@ ru:
  phones:
    index:
      name: 'Телефоны'
-   new:
-     name: 'Новый телефон'
-   edit:
-     name: 'Редактирование телефона'
-   form:
-     submit:
-      '%{action} телефон'
- categories:
-    index:
-      name: 'Категории'
-    new:
-      name: 'Новая категория'
-    edit:
-      name: 'Редактирование категории'
-    form:
-      submit:
-       '%{action} категорию'
+ admin:
+   phones:
+     index:
+       name: 'Телефоны'
+     new:
+       name: 'Новый телефон'
+     edit:
+       name: 'Редактирование телефона'
+     form:
+       submit:
+         '%{action} телефон'
+   categories:
+     index:
+       name: 'Категории'
+     new:
+       name: 'Новая категория'
+     edit:
+       name: 'Редактирование категории'
+     form:
+       submit:
+         '%{action} категорию'

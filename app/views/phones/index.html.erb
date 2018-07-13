@@ -1,6 +1,9 @@
 <h1><%= t('.name') %></h1>
+<% if user_signed_in? && current_user.admin? %>
 
-<section id='phones'>
+  <%= link_to 'Добавить телефон', new_admin_phone_path, class: 'btn btn-outline-primary btn-sm'%>
+<% end %>
+  <section id='phones'>
   <%= render @phones %>
 </section>
 
