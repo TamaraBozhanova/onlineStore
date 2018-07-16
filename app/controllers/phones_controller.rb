@@ -8,10 +8,6 @@ class PhonesController < ApplicationController
   def show
   end
 
-  #def new
-    #@phone=Phone.new
-  #end
-
   private
 
   def set_phone

@@ -10,16 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_11_190314) do
+ActiveRecord::Schema.define(version: 2018_07_15_054419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "phone_id"
+    t.bigint "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["phone_id"], name: "index_line_items_on_phone_id"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -46,9 +61,12 @@ ActiveRecord::Schema.define(version: 2018_07_11_190314) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
+    t.integer "roles_mask"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "phones"
 end

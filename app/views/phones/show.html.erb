@@ -24,5 +24,6 @@
   <section class="phone-description">
     <%=image_tag  @phone.image.url(:thumb), class: 'img-show' if @phone.image? %>
     <%=@phone.description %>
+    <%= button_to 'Add to cart', line_items_path(phone_id: @phone), class: 'btn btn-warning'%>
   </section>
 </product>
