@@ -1,23 +1,24 @@
-<!--<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>-->
+
+
+
 
 <div class="keep-shopping pv1 mt4 has-text-right">
-  <%= link_to  'Keep Shopping', phones_path, class: 'button is-warning' %>
+  <%= link_to  'Keep Shopping', phones_path, class: 'btn btn-warning' %>
 </div>
 <hr/>
 <section class ="section">
   <%= render(@cart.line_items) %>
-  <div class="columns">
+  <div class="columns d-flex justify-content-between">
     <div class="column">
       <%= button_to 'Empty Cart', @cart, method: :delete, data: {confirm: "Are you sure"},
-      class: "button is-danger" %>
+      class: "btn btn-warning" %>
     </div>
     <div class="column total has-text-right">
       <h4 class="title is-4">
         <span class="f5 has-text-grey">Total:</span>
-        <%= number_to_currency(@cart.total_price) %>
+        <%#= number_to_currency(@cart.total_price) %>
+        <%= number_to_currency(@cart.total_price, unit: "₴ ") %>
       </h4>
     </div>
   </div>

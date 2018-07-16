@@ -1,12 +1,12 @@
-<div class="columns align-items-center">
+<div class="columns align-items-center d-flex">
   <div class="column is-1">
     <%= line_item.quantity %>
   </div>
-  <!--<div class="column is-2">
-    <#figure class="is-128*128 image">
-      <#%= image_tag(line_item.phone.image_url(:thumb)) %>
-    <#/figure>
-  </div>-->
+  <div class="column is-2">
+    <figure class="is-128*128 image">
+      <%= image_tag(line_item.phone.image_url(:thumb)) if line_item.phone.image? %>
+    </figure>
+  </div>
   <div class="column is-9">
     <strong><%= line_item.phone.name %></strong>
     <div class="columns align-items-center">
@@ -14,7 +14,7 @@
         <%= truncate(line_item.phone.description, length: 140) %>
       </div>
       <div class="column is-3 has-text-right">
-        <strong class="f4"><%= number_to_currency(line_item.total_price) %></strong>
+        <strong class="f4"><%= number_to_currency(line_item.total_price, unit: "₴") %></strong>
       </div>
     </div>
   </div>

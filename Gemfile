@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem "font-awesome-rails"
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
@@ -48,6 +49,11 @@ gem 'carrierwave-i18n'
 gem 'will_paginate', '~> 3.1.0'
 gem 'ancestry'
 gem 'devise'
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl'
+end
 
 # gem 'carrierwave', '>= 1.0.0.beta', '<2.0'
 

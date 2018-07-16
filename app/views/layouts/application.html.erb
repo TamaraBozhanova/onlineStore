@@ -12,22 +12,25 @@
    <div class="container">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
      <a class="navbar-brand" href="#">Мобилочка на RoR</a>
-
-<!--      <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-      <!--<div class="navbar-collapse" id="navbarSupportedContent">-->
        <ul class="navbar-nav mr-auto">
         <li class="nav-item <%= 'active' if current_page?(root_path) || current_page?(phones_path)%>">
           <a class="nav-link" href="<%= root_path %>">Все телефоны</a>
         </li>
-         <!--<% Category.order(:name).roots.each do |category| %>
-           <li class="nav-item <%= 'active' if current_page?(category_path(category)) %>">
-           <%= link_to category.name, category, class: 'nav-link' %>
-           </li>
-         <% end %>-->
        </ul>
-       <%#=link_to 'Добавить телефон', new_phone_path, class: 'btn btn-outline-primary pull-xs-right'%>
 
-        <ul class="navbar-nav pull-xs-right">
+        <div class="navbar-nav pull-xs-right d-flex justify-content-around flex-row left-sidde-menu">
+          <% if cart_has_items %>
+            <%= link_to cart_path(@cart), class: "navbar-item button is-warming" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>
+                Cart
+                <%= cart_count_over_one %>
+              </span>
+              <% end %>
+            <% end %>
+
           <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -40,7 +43,7 @@
             <%= link_to  "Регистрация", new_user_registration_path, class: "nav-link" %>
           </li>
             <% end %>
-        </ul>
+        </div>
      </nav>
    </div>
 
