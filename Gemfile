@@ -50,16 +50,15 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'ancestry'
 gem 'devise'
 
-group :test do
-  gem 'rspec-rails'
-  gem 'factory_girl'
-end
+
+  # gem 'factory_girl'
 
 # gem 'carrierwave', '>= 1.0.0.beta', '<2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do

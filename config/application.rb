@@ -17,5 +17,8 @@ module PhoneStore
     # the framework and any gems in your application.
     config.time_zone = 'Europe/Kiev'
     config.i18n.default_locale = :ru
+
   end
 end
+
+
