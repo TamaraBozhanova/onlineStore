@@ -27,7 +27,6 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     phone = Phone.find(params[:phone_id])
-    #@line_item = @cart.line_items.build(phone: phone)
    @line_item = @cart.add_phone(phone)
     respond_to do |format|
       if @line_item.save

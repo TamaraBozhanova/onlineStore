@@ -17,7 +17,6 @@
     <div class="column total has-text-right">
       <h4 class="title is-4">
         <span class="f5 has-text-grey">Total:</span>
-        <%#= number_to_currency(@cart.total_price) %>
         <%= number_to_currency(@cart.total_price, unit: "₴ ") %>
       </h4>
     </div>
